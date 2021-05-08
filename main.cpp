@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     int conjuntoVeiculos;
     int conjuntoClientes;
     int conjuntoEstacoesCarregamento;
+    int conjuntoDepositos; // vai ser sempre 1?
 
     // Dados de entrada dependentes dos conjuntos
     int* mercadoriaVeiculo;
@@ -32,7 +33,12 @@ int main(int argc, char *argv[])
     int** custoTransporteEntreNos;
     int** distanciaEntreNos;
 
-   
+    // nomes
+    char** nomeDeposito;
+    char** nomeVeiculo;
+    char** nomeCliente;
+    char** nomeEstacaoCarregamento;
+
     // Leitura do Arquivo
     FILE* fp;
     fp = fopen(argv[1],"r");
@@ -44,10 +50,39 @@ int main(int argc, char *argv[])
     }
     
     // Leitura dos conjuntos
+    fscanf(fp, "%d", &conjuntoDepositos);
+    fscanf(fp, "%d", &conjuntoVeiculos);
+    fscanf(fp, "%d", &conjuntoClientes);
+    fscanf(fp, "%d", &conjuntoEstacoesCarregamento);
+    fscanf(fp, "%d", &conjuntoNos); // vai precisar?
+    fscanf(fp, "%d", &conjuntoArestas); // vai precisar?
 
     // Definindo os dados de entrada de acordo com o tamanho dos conjuntos lidos
+    // deposito
+    nomeDeposito = new char*[conjuntoDepositos];
+    for(int i = 0; i < conjuntoDepositos; i++) {
+        nomeDeposito[i] = new char[50];
+    }
 
+    // veiculos
+    nomeVeiculo = new char*[conjuntoVeiculos];
+    for(int i = 0; i < conjuntoVeiculos; i++) {
+        nomeVeiculo[i] = new char[50];
+    }
 
+    // clientes
+    nomeCliente = new char*[conjuntoClientes];
+    for(int i = 0; i < conjuntoClientes; i++) {
+        nomeCliente[i] = new char[50];
+    }
+
+    // estacoes carregamento
+    nomeEstacaoCarregamento = new char*[conjuntoEstacoesCarregamento];
+    for(int i = 0; i < conjuntoEstacoesCarregamento; i++) {
+        nomeEstacaoCarregamento[i] = new char[50];
+    }
+
+    // fazer dos nos e arestas ?
 
     // Após a declaração dos tamanhos dos dados de entrada, realizando a leitura
     
