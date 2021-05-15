@@ -1,6 +1,6 @@
-1 1 4 2 ?? 7 49
-deposito1 46
-veiculo1 15 58
+1 1 4 2
+deposito1 100
+veiculo1 15 46 58 
 cliente1 4
 cliente2 3
 cliente3 2
